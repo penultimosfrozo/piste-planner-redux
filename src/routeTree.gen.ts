@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CreaItinerarioRouteImport } from './routes/crea-itinerario'
+import { Route as EsploraRouteImport } from './routes/esplora'
+import { Route as ItinerarioRouteImport } from './routes/itinerario'
+import { Route as ProfiloRouteImport } from './routes/profilo'
+import { Route as RisultatiRouteImport } from './routes/risultati'
+import { Route as ApiItinerariesRouteImport } from './routes/api/itineraries'
+import { Route as LocalitaSlugRouteImport } from './routes/localita.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreaItinerarioRoute = CreaItinerarioRouteImport.update({
+  id: '/crea-itinerario',
+  path: '/crea-itinerario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsploraRoute = EsploraRouteImport.update({
+  id: '/esplora',
+  path: '/esplora',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ItinerarioRoute = ItinerarioRouteImport.update({
+  id: '/itinerario',
+  path: '/itinerario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfiloRoute = ProfiloRouteImport.update({
+  id: '/profilo',
+  path: '/profilo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RisultatiRoute = RisultatiRouteImport.update({
+  id: '/risultati',
+  path: '/risultati',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiItinerariesRoute = ApiItinerariesRouteImport.update({
+  id: '/api/itineraries',
+  path: '/api/itineraries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocalitaSlugRoute = LocalitaSlugRouteImport.update({
+  id: '/localita/$slug',
+  path: '/localita/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/crea-itinerario': typeof CreaItinerarioRoute
+  '/esplora': typeof EsploraRoute
+  '/itinerario': typeof ItinerarioRoute
+  '/profilo': typeof ProfiloRoute
+  '/risultati': typeof RisultatiRoute
+  '/api/itineraries': typeof ApiItinerariesRoute
+  '/localita/$slug': typeof LocalitaSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/crea-itinerario': typeof CreaItinerarioRoute
+  '/esplora': typeof EsploraRoute
+  '/itinerario': typeof ItinerarioRoute
+  '/profilo': typeof ProfiloRoute
+  '/risultati': typeof RisultatiRoute
+  '/api/itineraries': typeof ApiItinerariesRoute
+  '/localita/$slug': typeof LocalitaSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/crea-itinerario': typeof CreaItinerarioRoute
+  '/esplora': typeof EsploraRoute
+  '/itinerario': typeof ItinerarioRoute
+  '/profilo': typeof ProfiloRoute
+  '/risultati': typeof RisultatiRoute
+  '/api/itineraries': typeof ApiItinerariesRoute
+  '/localita/$slug': typeof LocalitaSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/crea-itinerario'
+    | '/esplora'
+    | '/itinerario'
+    | '/profilo'
+    | '/risultati'
+    | '/api/itineraries'
+    | '/localita/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/crea-itinerario'
+    | '/esplora'
+    | '/itinerario'
+    | '/profilo'
+    | '/risultati'
+    | '/api/itineraries'
+    | '/localita/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/auth'
+    | '/crea-itinerario'
+    | '/esplora'
+    | '/itinerario'
+    | '/profilo'
+    | '/risultati'
+    | '/api/itineraries'
+    | '/localita/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRoute
+  CreaItinerarioRoute: typeof CreaItinerarioRoute
+  EsploraRoute: typeof EsploraRoute
+  ItinerarioRoute: typeof ItinerarioRoute
+  ProfiloRoute: typeof ProfiloRoute
+  RisultatiRoute: typeof RisultatiRoute
+  ApiItinerariesRoute: typeof ApiItinerariesRoute
+  LocalitaSlugRoute: typeof LocalitaSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/crea-itinerario': {
+      id: '/crea-itinerario'
+      path: '/crea-itinerario'
+      fullPath: '/crea-itinerario'
+      preLoaderRoute: typeof CreaItinerarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/esplora': {
+      id: '/esplora'
+      path: '/esplora'
+      fullPath: '/esplora'
+      preLoaderRoute: typeof EsploraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/itinerario': {
+      id: '/itinerario'
+      path: '/itinerario'
+      fullPath: '/itinerario'
+      preLoaderRoute: typeof ItinerarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profilo': {
+      id: '/profilo'
+      path: '/profilo'
+      fullPath: '/profilo'
+      preLoaderRoute: typeof ProfiloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/risultati': {
+      id: '/risultati'
+      path: '/risultati'
+      fullPath: '/risultati'
+      preLoaderRoute: typeof RisultatiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/itineraries': {
+      id: '/api/itineraries'
+      path: '/api/itineraries'
+      fullPath: '/api/itineraries'
+      preLoaderRoute: typeof ApiItinerariesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/localita/$slug': {
+      id: '/localita/$slug'
+      path: '/localita/$slug'
+      fullPath: '/localita/$slug'
+      preLoaderRoute: typeof LocalitaSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthRoute: AuthRoute,
+  CreaItinerarioRoute: CreaItinerarioRoute,
+  EsploraRoute: EsploraRoute,
+  ItinerarioRoute: ItinerarioRoute,
+  ProfiloRoute: ProfiloRoute,
+  RisultatiRoute: RisultatiRoute,
+  ApiItinerariesRoute: ApiItinerariesRoute,
+  LocalitaSlugRoute: LocalitaSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
