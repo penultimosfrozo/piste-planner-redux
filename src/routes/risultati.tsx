@@ -248,8 +248,11 @@ function ResultsPage() {
             : "Confronto completato: scegli la destinazione più efficiente, poi personalizza hotel e noleggio."}
         </div>
 
+        {googlePending && <EfficiencySkeleton count={3} />}
+
         {/* Confronto: hotel e noleggi compaiono solo dentro la scheda selezionata */}
-        {shown.map((result, index) => {
+        {!googlePending &&
+          shown.map((result, index) => {
           const isSelected = result.resort.id === selectedId;
           return (
             <div key={result.resort.id}>
