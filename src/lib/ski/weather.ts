@@ -17,8 +17,6 @@ export interface WeatherDay {
   windKmh: number;
   /** Precipitazioni previste (mm). */
   precipitationMm: number;
-  /** Neve fresca prevista (cm). */
-  snowfallCm: number;
 }
 
 export interface WeatherEstimate {
@@ -34,8 +32,6 @@ export interface WeatherEstimate {
   days: WeatherDay[];
   /** Raffica massima prevista nel periodo (km/h). */
   maxWindKmh: number;
-  /** Neve fresca totale prevista (cm). */
-  totalSnowfallCm: number;
 }
 
 const MONTH_SCORE: Record<number, number> = {
@@ -87,8 +83,7 @@ export function forecastDays(resort: Resort, startDate: string, days = 1): Weath
     const windKmh = Math.round(12 + m * 55 + (resort.altitude > 2200 ? 10 : 0));
     const wet = n > 0.55 ? (n - 0.55) * 40 : 0;
     const precipitationMm = r1(wet);
-    const snowfallCm = tempMax <= 1 ? r1(wet * 1.2) : 0;
-    out.push({ date, tempMin, tempMax, windKmh, precipitationMm, snowfallCm });
+    out.push({ date, tempMin, tempMax, windKmh, precipitationMm });
   }
   return out;
 }
@@ -107,23 +102,19 @@ export function estimateWeather(
 
   const forecast = forecastDays(resort, startDate, days);
   const maxWindKmh = Math.max(...forecast.map((d) => d.windKmh));
-  const totalSnowfallCm = r1(forecast.reduce((a, d) => a + d.snowfallCm, 0));
   const maxTemp = Math.max(...forecast.map((d) => d.tempMax));
 
   const windMalus = maxWindKmh >= 60 ? 0.2 : maxWindKmh >= 45 ? 0.1 : 0;
-  const snowBonus = totalSnowfallCm >= 20 ? 0.1 : totalSnowfallCm >= 8 ? 0.05 : 0;
 
   const score = Math.min(
     1,
-    Math.max(0, season * 0.7 + altitudeBonus + snowmaking - windMalus + snowBonus),
+    Math.max(0, season * 0.7 + altitudeBonus + snowmaking - windMalus),
   );
 
   const reasons: string[] = [
     `Temperature previste tra ${Math.min(...forecast.map((d) => d.tempMin))} °C e ${maxTemp} °C in quota.`,
     `Raffiche massime previste di ${maxWindKmh} km/h sulle vette.`,
-    totalSnowfallCm > 0
-      ? `Neve fresca prevista: ${totalSnowfallCm} cm nel periodo scelto.`
-      : "Nessuna nevicata significativa prevista nel periodo scelto.",
+    "Dati neve: solo misure reali del servizio meteo nella scheda località.",
     `Innevamento programmato sul ${resort.snowmaking_coverage}% delle piste, quota massima ${resort.altitude} m.`,
   ];
 
@@ -140,10 +131,6 @@ export function estimateWeather(
     label = "Vento forte";
     detail = "vento sostenuto sulle vette";
     impact = `Il tag è stato assegnato a causa di raffiche superiori a 45 km/h previste sulle vette (${maxWindKmh} km/h), con possibile chiusura temporanea degli impianti di quota.`;
-  } else if (totalSnowfallCm >= 20) {
-    label = "Ottima nevicata";
-    detail = `${totalSnowfallCm} cm di neve fresca attesi`;
-    impact = `Sono attesi ${totalSnowfallCm} cm di neve fresca: fondo eccellente, ma possibili rallentamenti su strade e impianti nelle ore della nevicata.`;
   } else if (score >= 0.8) {
     label = "Condizioni ottime";
     detail = "periodo pieno di stagione, quota alta e innevamento affidabile";
@@ -169,7 +156,6 @@ export function estimateWeather(
     impact,
     days: forecast,
     maxWindKmh,
-    totalSnowfallCm,
   };
 }
 
