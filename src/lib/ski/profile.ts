@@ -18,17 +18,18 @@ export type SkiProfile = {
   saved: SavedItinerary[];
 };
 
+/** Profilo vuoto: nessun dato fittizio o comprensorio precompilato. */
 export const DEFAULT_PROFILE: SkiProfile = {
   name: "Sciatore ospite",
   avatar: "",
   loggedIn: false,
   level: "intermediate",
-  visitedResortIds: ["roccaraso", "ovindoli"],
-  totalKm: 420,
+  visitedResortIds: [],
+  totalKm: 0,
   saved: [],
 };
 
-const KEY = "skiscore.profile.v1";
+const KEY = "peakfinder.profile.v1";
 
 export function loadProfile(): SkiProfile {
   if (typeof window === "undefined") return DEFAULT_PROFILE;
