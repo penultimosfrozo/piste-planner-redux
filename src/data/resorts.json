@@ -1,0 +1,992 @@
+[
+  {
+    "id": "campo-imperatore",
+    "name": "Campo Imperatore",
+    "region": "Abruzzo — Gran Sasso",
+    "lat": 42.4419,
+    "lng": 13.5597,
+    "altitude": 2130,
+    "openHours": 8,
+    "liftsCount": 6,
+    "total_ski_km": 15,
+    "total_lifts": 6,
+    "modern_lifts_percentage": 35,
+    "vertical_drop": 620,
+    "snowmaking_coverage": 40,
+    "ridesPerDay": 11,
+    "queueMinutesWeekday": 3,
+    "queueMinutesWeekend": 9,
+    "skipass": {
+      "day1": 30,
+      "day2": 56,
+      "day3": 80,
+      "day6": 145
+    },
+    "tolls": {
+      "highwayShare": 0.55,
+      "ratePerKm": 0.075
+    },
+    "parkings": [
+      {
+        "name": "Piazzale Campo Imperatore",
+        "lat": 42.4423,
+        "lng": 13.5589,
+        "distanceToLiftsM": 120,
+        "pricePerDay": 0,
+        "covered": false
+      },
+      {
+        "name": "Fonte Cerreto (base funivia)",
+        "lat": 42.4046,
+        "lng": 13.5192,
+        "distanceToLiftsM": 250,
+        "pricePerDay": 3,
+        "covered": false
+      },
+      {
+        "name": "Parcheggio Hotel Nido dell'Aquila",
+        "lat": 42.4038,
+        "lng": 13.5215,
+        "distanceToLiftsM": 700,
+        "pricePerDay": 0,
+        "covered": false
+      }
+    ],
+    "rentals": [
+      {
+        "name": "Ski Service Fonte Cerreto",
+        "lat": 42.4049,
+        "lng": 13.5198,
+        "prices": {
+          "beginner": 16,
+          "intermediate": 24,
+          "advanced": 34
+        },
+        "image_url": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Ski Service Fonte Cerreto",
+        "booking_url": "https://www.google.com/maps/search/Ski+Service+Fonte+Cerreto",
+        "skipass_deal": true
+      },
+      {
+        "name": "Gran Sasso Noleggio",
+        "lat": 42.4041,
+        "lng": 13.5223,
+        "prices": {
+          "beginner": 15,
+          "intermediate": 22,
+          "advanced": 31
+        },
+        "image_url": "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Gran Sasso Noleggio",
+        "booking_url": "https://www.google.com/maps/search/Gran+Sasso+Noleggio",
+        "skipass_deal": true
+      },
+      {
+        "name": "Aquila Rent Ski",
+        "lat": 42.4425,
+        "lng": 13.5612,
+        "prices": {
+          "beginner": 18,
+          "intermediate": 26,
+          "advanced": 36
+        },
+        "image_url": "https://images.unsplash.com/photo-1522056615691-da7b8106c665?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Aquila Rent Ski",
+        "booking_url": "https://www.google.com/maps/search/Aquila+Rent+Ski",
+        "skipass_deal": false
+      }
+    ],
+    "hotels": [
+      {
+        "id": "campo-imperatore-budget",
+        "name": "Rifugio Fonte Cerreto",
+        "category": "budget",
+        "stars": 2,
+        "price_per_night": 72,
+        "distance_to_lift_meters": 900,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Rifugio Fonte Cerreto a Campo Imperatore",
+        "image_caption": "Rifugio Fonte Cerreto — Abruzzo — Gran Sasso",
+        "amenities": [
+          "Colazione inclusa",
+          "Wi-Fi",
+          "Deposito sci"
+        ],
+        "lat": 42.449,
+        "lng": 13.56495
+      },
+      {
+        "id": "campo-imperatore-comfort",
+        "name": "Hotel Nido dell'Aquila",
+        "category": "comfort",
+        "stars": 3,
+        "price_per_night": 118,
+        "distance_to_lift_meters": 650,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Hotel Nido dell'Aquila a Campo Imperatore",
+        "image_caption": "Hotel Nido dell'Aquila — Abruzzo — Gran Sasso",
+        "amenities": [
+          "Colazione inclusa",
+          "Ristorante",
+          "Parcheggio gratuito",
+          "Deposito sci"
+        ],
+        "lat": 42.43662,
+        "lng": 13.56308
+      },
+      {
+        "id": "campo-imperatore-luxury",
+        "name": "Hotel Campo Imperatore",
+        "category": "luxury",
+        "stars": 4,
+        "price_per_night": 196,
+        "distance_to_lift_meters": 80,
+        "ski_in_ski_out": true,
+        "image_url": "https://images.unsplash.com/photo-1517320964276-a002fa203177?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Hotel Campo Imperatore a Campo Imperatore",
+        "image_caption": "Hotel Campo Imperatore — Abruzzo — Gran Sasso",
+        "amenities": [
+          "Ski-in Ski-out",
+          "Spa",
+          "Ristorante",
+          "Deposito sci riscaldato"
+        ],
+        "lat": 42.44203,
+        "lng": 13.55874
+      }
+    ],
+    "open_slopes_count": 9,
+    "total_slopes_count": 15,
+    "opening_hours": "08:30 – 16:30",
+    "weather_status": "Sereno, -4°C",
+    "snow_report": "Neve compatta, 60 cm",
+    "webcam_url": "https://www.skylinewebcams.com/it/webcam/italia/abruzzo/laquila/campo-imperatore.html"
+  },
+  {
+    "id": "roccaraso",
+    "name": "Roccaraso — Rivisondoli",
+    "region": "Abruzzo — Alto Sangro",
+    "lat": 41.8465,
+    "lng": 14.0793,
+    "altitude": 1250,
+    "openHours": 8.5,
+    "liftsCount": 24,
+    "total_ski_km": 110,
+    "total_lifts": 21,
+    "modern_lifts_percentage": 60,
+    "vertical_drop": 700,
+    "snowmaking_coverage": 90,
+    "ridesPerDay": 13,
+    "queueMinutesWeekday": 4,
+    "queueMinutesWeekend": 14,
+    "skipass": {
+      "day1": 42,
+      "day2": 78,
+      "day3": 111,
+      "day6": 198
+    },
+    "tolls": {
+      "highwayShare": 0.7,
+      "ratePerKm": 0.08
+    },
+    "parkings": [
+      {
+        "name": "Parcheggio Aremogna",
+        "lat": 41.8281,
+        "lng": 14.0662,
+        "distanceToLiftsM": 180,
+        "pricePerDay": 5,
+        "covered": false
+      },
+      {
+        "name": "Parcheggio Pizzalto",
+        "lat": 41.8534,
+        "lng": 14.0475,
+        "distanceToLiftsM": 400,
+        "pricePerDay": 4,
+        "covered": false
+      },
+      {
+        "name": "Parcheggio Centro Roccaraso",
+        "lat": 41.8471,
+        "lng": 14.0787,
+        "distanceToLiftsM": 900,
+        "pricePerDay": 2,
+        "covered": true
+      }
+    ],
+    "rentals": [
+      {
+        "name": "Noleggio Aremogna Sport",
+        "lat": 41.8285,
+        "lng": 14.0669,
+        "prices": {
+          "beginner": 18,
+          "intermediate": 27,
+          "advanced": 38
+        },
+        "image_url": "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Noleggio Aremogna Sport",
+        "booking_url": "https://www.google.com/maps/search/Noleggio+Aremogna+Sport",
+        "skipass_deal": true
+      },
+      {
+        "name": "Ski Rent Pizzalto",
+        "lat": 41.853,
+        "lng": 14.0483,
+        "prices": {
+          "beginner": 17,
+          "intermediate": 25,
+          "advanced": 35
+        },
+        "image_url": "https://images.unsplash.com/photo-1522056615691-da7b8106c665?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Ski Rent Pizzalto",
+        "booking_url": "https://www.google.com/maps/search/Ski+Rent+Pizzalto",
+        "skipass_deal": true
+      },
+      {
+        "name": "Alto Sangro Ski Shop",
+        "lat": 41.8468,
+        "lng": 14.0779,
+        "prices": {
+          "beginner": 15,
+          "intermediate": 23,
+          "advanced": 33
+        },
+        "image_url": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Alto Sangro Ski Shop",
+        "booking_url": "https://www.google.com/maps/search/Alto+Sangro+Ski+Shop",
+        "skipass_deal": false
+      }
+    ],
+    "hotels": [
+      {
+        "id": "roccaraso-budget",
+        "name": "B&B Casa Aremogna",
+        "category": "budget",
+        "stars": 2,
+        "price_per_night": 68,
+        "distance_to_lift_meters": 1200,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel B&B Casa Aremogna a Roccaraso — Rivisondoli",
+        "image_caption": "B&B Casa Aremogna — Abruzzo — Alto Sangro",
+        "amenities": [
+          "Colazione inclusa",
+          "Wi-Fi",
+          "Navetta impianti"
+        ],
+        "lat": 41.85596,
+        "lng": 14.08624
+      },
+      {
+        "id": "roccaraso-comfort",
+        "name": "Hotel Excelsior Roccaraso",
+        "category": "comfort",
+        "stars": 3,
+        "price_per_night": 132,
+        "distance_to_lift_meters": 700,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Hotel Excelsior Roccaraso a Roccaraso — Rivisondoli",
+        "image_caption": "Hotel Excelsior Roccaraso — Abruzzo — Alto Sangro",
+        "amenities": [
+          "Colazione inclusa",
+          "Piscina",
+          "Deposito sci",
+          "Parcheggio"
+        ],
+        "lat": 41.84082,
+        "lng": 14.08291
+      },
+      {
+        "id": "roccaraso-luxury",
+        "name": "Hotel Boschetto Aremogna",
+        "category": "luxury",
+        "stars": 4,
+        "price_per_night": 215,
+        "distance_to_lift_meters": 50,
+        "ski_in_ski_out": true,
+        "image_url": "https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Hotel Boschetto Aremogna a Roccaraso — Rivisondoli",
+        "image_caption": "Hotel Boschetto Aremogna — Abruzzo — Alto Sangro",
+        "amenities": [
+          "Ski-in Ski-out",
+          "Spa",
+          "Ristorante gourmet",
+          "Noleggio interno"
+        ],
+        "lat": 41.84658,
+        "lng": 14.07871
+      }
+    ],
+    "open_slopes_count": 88,
+    "total_slopes_count": 110,
+    "opening_hours": "08:30 – 16:45",
+    "weather_status": "Nuvoloso, -2°C",
+    "snow_report": "Neve fresca, 85 cm",
+    "webcam_url": "https://www.skylinewebcams.com/it/webcam/italia/abruzzo/laquila/roccaraso.html"
+  },
+  {
+    "id": "ovindoli",
+    "name": "Ovindoli — Monte Magnola",
+    "region": "Abruzzo — Marsica",
+    "lat": 42.1447,
+    "lng": 13.5175,
+    "altitude": 1400,
+    "openHours": 8,
+    "liftsCount": 9,
+    "total_ski_km": 30,
+    "total_lifts": 9,
+    "modern_lifts_percentage": 55,
+    "vertical_drop": 750,
+    "snowmaking_coverage": 85,
+    "ridesPerDay": 12,
+    "queueMinutesWeekday": 3,
+    "queueMinutesWeekend": 12,
+    "skipass": {
+      "day1": 36,
+      "day2": 68,
+      "day3": 96,
+      "day6": 172
+    },
+    "tolls": {
+      "highwayShare": 0.6,
+      "ratePerKm": 0.078
+    },
+    "parkings": [
+      {
+        "name": "Parcheggio Magnola impianti",
+        "lat": 42.1451,
+        "lng": 13.5166,
+        "distanceToLiftsM": 150,
+        "pricePerDay": 4,
+        "covered": false
+      },
+      {
+        "name": "Parcheggio Anfiteatro",
+        "lat": 42.1424,
+        "lng": 13.5203,
+        "distanceToLiftsM": 550,
+        "pricePerDay": 0,
+        "covered": false
+      },
+      {
+        "name": "Parcheggio Ovindoli paese",
+        "lat": 42.1372,
+        "lng": 13.5182,
+        "distanceToLiftsM": 1500,
+        "pricePerDay": 0,
+        "covered": false
+      }
+    ],
+    "rentals": [
+      {
+        "name": "Magnola Rent",
+        "lat": 42.1455,
+        "lng": 13.5171,
+        "prices": {
+          "beginner": 16,
+          "intermediate": 24,
+          "advanced": 33
+        },
+        "image_url": "https://images.unsplash.com/photo-1522056615691-da7b8106c665?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Magnola Rent",
+        "booking_url": "https://www.google.com/maps/search/Magnola+Rent",
+        "skipass_deal": true
+      },
+      {
+        "name": "Ovindoli Ski Service",
+        "lat": 42.1429,
+        "lng": 13.5197,
+        "prices": {
+          "beginner": 14,
+          "intermediate": 22,
+          "advanced": 30
+        },
+        "image_url": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Ovindoli Ski Service",
+        "booking_url": "https://www.google.com/maps/search/Ovindoli+Ski+Service",
+        "skipass_deal": true
+      },
+      {
+        "name": "Velino Sport",
+        "lat": 42.1379,
+        "lng": 13.5189,
+        "prices": {
+          "beginner": 13,
+          "intermediate": 20,
+          "advanced": 29
+        },
+        "image_url": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Velino Sport",
+        "booking_url": "https://www.google.com/maps/search/Velino+Sport",
+        "skipass_deal": false
+      }
+    ],
+    "hotels": [
+      {
+        "id": "ovindoli-budget",
+        "name": "B&B Monte Magnola",
+        "category": "budget",
+        "stars": 2,
+        "price_per_night": 64,
+        "distance_to_lift_meters": 1500,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel B&B Monte Magnola a Ovindoli — Monte Magnola",
+        "image_caption": "B&B Monte Magnola — Abruzzo — Marsica",
+        "amenities": [
+          "Colazione inclusa",
+          "Wi-Fi",
+          "Parcheggio"
+        ],
+        "lat": 42.15653,
+        "lng": 13.52621
+      },
+      {
+        "id": "ovindoli-comfort",
+        "name": "Hotel Magnola Palace",
+        "category": "comfort",
+        "stars": 4,
+        "price_per_night": 145,
+        "distance_to_lift_meters": 400,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Hotel Magnola Palace a Ovindoli — Monte Magnola",
+        "image_caption": "Hotel Magnola Palace — Abruzzo — Marsica",
+        "amenities": [
+          "Piscina",
+          "Spa",
+          "Ristorante",
+          "Deposito sci"
+        ],
+        "lat": 42.14145,
+        "lng": 13.51957
+      },
+      {
+        "id": "ovindoli-luxury",
+        "name": "Ovindoli Ski Resort Lodge",
+        "category": "luxury",
+        "stars": 4,
+        "price_per_night": 225,
+        "distance_to_lift_meters": 60,
+        "ski_in_ski_out": true,
+        "image_url": "https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Ovindoli Ski Resort Lodge a Ovindoli — Monte Magnola",
+        "image_caption": "Ovindoli Ski Resort Lodge — Abruzzo — Marsica",
+        "amenities": [
+          "Ski-in Ski-out",
+          "Spa",
+          "Ristorante",
+          "Servizio in camera"
+        ],
+        "lat": 42.1448,
+        "lng": 13.51679
+      }
+    ],
+    "open_slopes_count": 22,
+    "total_slopes_count": 30,
+    "opening_hours": "08:45 – 16:30",
+    "weather_status": "Sole, -1°C",
+    "snow_report": "Neve battuta, 70 cm",
+    "webcam_url": "https://www.skylinewebcams.com/it/webcam/italia/abruzzo/laquila/ovindoli.html"
+  },
+  {
+    "id": "cervinia",
+    "name": "Breuil-Cervinia",
+    "region": "Valle d'Aosta",
+    "lat": 45.9364,
+    "lng": 7.6314,
+    "altitude": 2050,
+    "openHours": 8.5,
+    "liftsCount": 20,
+    "total_ski_km": 150,
+    "total_lifts": 20,
+    "modern_lifts_percentage": 80,
+    "vertical_drop": 1900,
+    "snowmaking_coverage": 95,
+    "ridesPerDay": 12,
+    "queueMinutesWeekday": 4,
+    "queueMinutesWeekend": 11,
+    "skipass": {
+      "day1": 58,
+      "day2": 112,
+      "day3": 162,
+      "day6": 296
+    },
+    "tolls": {
+      "highwayShare": 0.8,
+      "ratePerKm": 0.095
+    },
+    "parkings": [
+      {
+        "name": "Parcheggio Cielo Alto",
+        "lat": 45.9391,
+        "lng": 7.6349,
+        "distanceToLiftsM": 350,
+        "pricePerDay": 8,
+        "covered": false
+      },
+      {
+        "name": "Autosilo Cervinia (coperto)",
+        "lat": 45.9349,
+        "lng": 7.6299,
+        "distanceToLiftsM": 220,
+        "pricePerDay": 18,
+        "covered": true
+      },
+      {
+        "name": "Parcheggio Lago Blu",
+        "lat": 45.9243,
+        "lng": 7.6295,
+        "distanceToLiftsM": 1700,
+        "pricePerDay": 0,
+        "covered": false
+      }
+    ],
+    "rentals": [
+      {
+        "name": "Cervino Ski Rent",
+        "lat": 45.9353,
+        "lng": 7.6304,
+        "prices": {
+          "beginner": 22,
+          "intermediate": 33,
+          "advanced": 46
+        },
+        "image_url": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Cervino Ski Rent",
+        "booking_url": "https://www.google.com/maps/search/Cervino+Ski+Rent",
+        "skipass_deal": true
+      },
+      {
+        "name": "Matterhorn Sport",
+        "lat": 45.9358,
+        "lng": 7.6288,
+        "prices": {
+          "beginner": 24,
+          "intermediate": 35,
+          "advanced": 49
+        },
+        "image_url": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Matterhorn Sport",
+        "booking_url": "https://www.google.com/maps/search/Matterhorn+Sport",
+        "skipass_deal": true
+      },
+      {
+        "name": "Breuil Noleggio Sci",
+        "lat": 45.9386,
+        "lng": 7.6341,
+        "prices": {
+          "beginner": 20,
+          "intermediate": 31,
+          "advanced": 44
+        },
+        "image_url": "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Breuil Noleggio Sci",
+        "booking_url": "https://www.google.com/maps/search/Breuil+Noleggio+Sci",
+        "skipass_deal": false
+      }
+    ],
+    "hotels": [
+      {
+        "id": "cervinia-budget",
+        "name": "Ostello Breuil B&B",
+        "category": "budget",
+        "stars": 2,
+        "price_per_night": 85,
+        "distance_to_lift_meters": 1100,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Ostello Breuil B&B a Breuil-Cervinia",
+        "image_caption": "Ostello Breuil B&B — Valle d'Aosta",
+        "amenities": [
+          "Colazione inclusa",
+          "Wi-Fi",
+          "Deposito sci"
+        ],
+        "lat": 45.94507,
+        "lng": 7.63821
+      },
+      {
+        "id": "cervinia-comfort",
+        "name": "Hotel Breithorn Cervinia",
+        "category": "comfort",
+        "stars": 4,
+        "price_per_night": 178,
+        "distance_to_lift_meters": 350,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Hotel Breithorn Cervinia a Breuil-Cervinia",
+        "image_caption": "Hotel Breithorn Cervinia — Valle d'Aosta",
+        "amenities": [
+          "Colazione inclusa",
+          "Spa",
+          "Bar",
+          "Deposito sci riscaldato"
+        ],
+        "lat": 45.93356,
+        "lng": 7.63333
+      },
+      {
+        "id": "cervinia-luxury",
+        "name": "Hotel Hermitage Relais & Châteaux",
+        "category": "luxury",
+        "stars": 5,
+        "price_per_night": 420,
+        "distance_to_lift_meters": 120,
+        "ski_in_ski_out": true,
+        "image_url": "https://images.unsplash.com/photo-1517320964276-a002fa203177?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Hotel Hermitage Relais & Châteaux a Breuil-Cervinia",
+        "image_caption": "Hotel Hermitage Relais & Châteaux — Valle d'Aosta",
+        "amenities": [
+          "Ski-in Ski-out",
+          "Spa",
+          "Ristorante stellato",
+          "Navetta privata"
+        ],
+        "lat": 45.9366,
+        "lng": 7.62988
+      }
+    ],
+    "open_slopes_count": 140,
+    "total_slopes_count": 160,
+    "opening_hours": "08:00 – 17:00",
+    "weather_status": "Sole, -8°C",
+    "snow_report": "Polvere, 150 cm",
+    "webcam_url": "https://www.skylinewebcams.com/it/webcam/italia/valle-daosta/cervinia/cervinia.html"
+  },
+  {
+    "id": "madonna-di-campiglio",
+    "name": "Madonna di Campiglio",
+    "region": "Trentino — Dolomiti di Brenta",
+    "lat": 46.2298,
+    "lng": 10.8256,
+    "altitude": 1550,
+    "openHours": 8.5,
+    "liftsCount": 22,
+    "total_ski_km": 150,
+    "total_lifts": 22,
+    "modern_lifts_percentage": 90,
+    "vertical_drop": 1200,
+    "snowmaking_coverage": 100,
+    "ridesPerDay": 13,
+    "queueMinutesWeekday": 3,
+    "queueMinutesWeekend": 8,
+    "skipass": {
+      "day1": 66,
+      "day2": 128,
+      "day3": 186,
+      "day6": 336
+    },
+    "tolls": {
+      "highwayShare": 0.75,
+      "ratePerKm": 0.09
+    },
+    "parkings": [
+      {
+        "name": "Parcheggio Spinale",
+        "lat": 46.2312,
+        "lng": 10.8272,
+        "distanceToLiftsM": 200,
+        "pricePerDay": 12,
+        "covered": false
+      },
+      {
+        "name": "Parcheggio Pradalago",
+        "lat": 46.2331,
+        "lng": 10.8221,
+        "distanceToLiftsM": 450,
+        "pricePerDay": 10,
+        "covered": false
+      },
+      {
+        "name": "Parcheggio Palù (navetta)",
+        "lat": 46.2229,
+        "lng": 10.8298,
+        "distanceToLiftsM": 1600,
+        "pricePerDay": 0,
+        "covered": false
+      }
+    ],
+    "rentals": [
+      {
+        "name": "Campiglio Rent & Go",
+        "lat": 46.2317,
+        "lng": 10.8265,
+        "prices": {
+          "beginner": 25,
+          "intermediate": 36,
+          "advanced": 52
+        },
+        "image_url": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Campiglio Rent & Go",
+        "booking_url": "https://www.google.com/maps/search/Campiglio+Rent+&+Go",
+        "skipass_deal": true
+      },
+      {
+        "name": "Brenta Ski Service",
+        "lat": 46.2327,
+        "lng": 10.8231,
+        "prices": {
+          "beginner": 23,
+          "intermediate": 34,
+          "advanced": 48
+        },
+        "image_url": "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Brenta Ski Service",
+        "booking_url": "https://www.google.com/maps/search/Brenta+Ski+Service",
+        "skipass_deal": true
+      },
+      {
+        "name": "Dolomiti Noleggi",
+        "lat": 46.2287,
+        "lng": 10.8249,
+        "prices": {
+          "beginner": 21,
+          "intermediate": 32,
+          "advanced": 45
+        },
+        "image_url": "https://images.unsplash.com/photo-1522056615691-da7b8106c665?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Dolomiti Noleggi",
+        "booking_url": "https://www.google.com/maps/search/Dolomiti+Noleggi",
+        "skipass_deal": false
+      }
+    ],
+    "hotels": [
+      {
+        "id": "madonna-di-campiglio-budget",
+        "name": "Garnì Dolomiti B&B",
+        "category": "budget",
+        "stars": 2,
+        "price_per_night": 92,
+        "distance_to_lift_meters": 1300,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Garnì Dolomiti B&B a Madonna di Campiglio",
+        "image_caption": "Garnì Dolomiti B&B — Trentino — Dolomiti di Brenta",
+        "amenities": [
+          "Colazione inclusa",
+          "Wi-Fi",
+          "Deposito sci"
+        ],
+        "lat": 46.24005,
+        "lng": 10.83369
+      },
+      {
+        "id": "madonna-di-campiglio-comfort",
+        "name": "Hotel Bertelli",
+        "category": "comfort",
+        "stars": 4,
+        "price_per_night": 205,
+        "distance_to_lift_meters": 300,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Hotel Bertelli a Madonna di Campiglio",
+        "image_caption": "Hotel Bertelli — Trentino — Dolomiti di Brenta",
+        "amenities": [
+          "Spa",
+          "Ristorante",
+          "Deposito sci riscaldato",
+          "Parcheggio"
+        ],
+        "lat": 46.22736,
+        "lng": 10.82726
+      },
+      {
+        "id": "madonna-di-campiglio-luxury",
+        "name": "Hotel Lorenzetti Ski-in",
+        "category": "luxury",
+        "stars": 5,
+        "price_per_night": 395,
+        "distance_to_lift_meters": 40,
+        "ski_in_ski_out": true,
+        "image_url": "https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Hotel Lorenzetti Ski-in a Madonna di Campiglio",
+        "image_caption": "Hotel Lorenzetti Ski-in — Trentino — Dolomiti di Brenta",
+        "amenities": [
+          "Ski-in Ski-out",
+          "Spa panoramica",
+          "Ristorante gourmet",
+          "Ski room"
+        ],
+        "lat": 46.22987,
+        "lng": 10.82509
+      }
+    ],
+    "open_slopes_count": 135,
+    "total_slopes_count": 150,
+    "opening_hours": "08:30 – 16:45",
+    "weather_status": "Nevischio, -5°C",
+    "snow_report": "Neve fresca, 120 cm",
+    "webcam_url": "https://www.skylinewebcams.com/it/webcam/italia/trentino-alto-adige/trento/madonna-di-campiglio.html"
+  },
+  {
+    "id": "corvara",
+    "name": "Corvara — Sellaronda",
+    "region": "Alto Adige — Alta Badia",
+    "lat": 46.5504,
+    "lng": 11.8747,
+    "altitude": 1568,
+    "openHours": 8.5,
+    "liftsCount": 53,
+    "total_ski_km": 130,
+    "total_lifts": 53,
+    "modern_lifts_percentage": 85,
+    "vertical_drop": 1000,
+    "snowmaking_coverage": 100,
+    "ridesPerDay": 14,
+    "queueMinutesWeekday": 2,
+    "queueMinutesWeekend": 6,
+    "skipass": {
+      "day1": 75,
+      "day2": 146,
+      "day3": 210,
+      "day6": 378
+    },
+    "tolls": {
+      "highwayShare": 0.72,
+      "ratePerKm": 0.088
+    },
+    "parkings": [
+      {
+        "name": "Parcheggio Boè (impianti)",
+        "lat": 46.5512,
+        "lng": 11.8759,
+        "distanceToLiftsM": 100,
+        "pricePerDay": 6,
+        "covered": false
+      },
+      {
+        "name": "Parcheggio Col Alt",
+        "lat": 46.5491,
+        "lng": 11.8722,
+        "distanceToLiftsM": 380,
+        "pricePerDay": 5,
+        "covered": false
+      },
+      {
+        "name": "Parcheggio Corvara centro",
+        "lat": 46.5471,
+        "lng": 11.8703,
+        "distanceToLiftsM": 850,
+        "pricePerDay": 0,
+        "covered": false
+      }
+    ],
+    "rentals": [
+      {
+        "name": "Alta Badia Rental",
+        "lat": 46.5508,
+        "lng": 11.8752,
+        "prices": {
+          "beginner": 24,
+          "intermediate": 35,
+          "advanced": 50
+        },
+        "image_url": "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Alta Badia Rental",
+        "booking_url": "https://www.google.com/maps/search/Alta+Badia+Rental",
+        "skipass_deal": true
+      },
+      {
+        "name": "Sellaronda Ski Rent",
+        "lat": 46.5495,
+        "lng": 11.8729,
+        "prices": {
+          "beginner": 22,
+          "intermediate": 33,
+          "advanced": 47
+        },
+        "image_url": "https://images.unsplash.com/photo-1522056615691-da7b8106c665?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Sellaronda Ski Rent",
+        "booking_url": "https://www.google.com/maps/search/Sellaronda+Ski+Rent",
+        "skipass_deal": true
+      },
+      {
+        "name": "Corvara Sport",
+        "lat": 46.5475,
+        "lng": 11.8711,
+        "prices": {
+          "beginner": 20,
+          "intermediate": 30,
+          "advanced": 43
+        },
+        "image_url": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=70",
+        "image_alt": "Sci e scarponi pronti al noleggio Corvara Sport",
+        "booking_url": "https://www.google.com/maps/search/Corvara+Sport",
+        "skipass_deal": false
+      }
+    ],
+    "hotels": [
+      {
+        "id": "corvara-budget",
+        "name": "Garnì Ciasa Alta",
+        "category": "budget",
+        "stars": 3,
+        "price_per_night": 88,
+        "distance_to_lift_meters": 1000,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Garnì Ciasa Alta a Corvara — Sellaronda",
+        "image_caption": "Garnì Ciasa Alta — Alto Adige — Alta Badia",
+        "amenities": [
+          "Colazione inclusa",
+          "Wi-Fi",
+          "Deposito sci"
+        ],
+        "lat": 46.55828,
+        "lng": 11.88096
+      },
+      {
+        "id": "corvara-comfort",
+        "name": "Hotel Posta Zirm",
+        "category": "comfort",
+        "stars": 4,
+        "price_per_night": 198,
+        "distance_to_lift_meters": 250,
+        "ski_in_ski_out": false,
+        "image_url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Hotel Posta Zirm a Corvara — Sellaronda",
+        "image_caption": "Hotel Posta Zirm — Alto Adige — Alta Badia",
+        "amenities": [
+          "Spa",
+          "Ristorante",
+          "Piscina",
+          "Parcheggio"
+        ],
+        "lat": 46.54837,
+        "lng": 11.8761
+      },
+      {
+        "id": "corvara-luxury",
+        "name": "Hotel La Perla Corvara",
+        "category": "luxury",
+        "stars": 5,
+        "price_per_night": 450,
+        "distance_to_lift_meters": 60,
+        "ski_in_ski_out": true,
+        "image_url": "https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=70",
+        "image_alt": "Esterno dell'hotel Hotel La Perla Corvara a Corvara — Sellaronda",
+        "image_caption": "Hotel La Perla Corvara — Alto Adige — Alta Badia",
+        "amenities": [
+          "Ski-in Ski-out",
+          "Spa",
+          "Ristorante stellato",
+          "Ski butler"
+        ],
+        "lat": 46.5505,
+        "lng": 11.87393
+      }
+    ],
+    "open_slopes_count": 480,
+    "total_slopes_count": 500,
+    "opening_hours": "08:30 – 17:00",
+    "weather_status": "Sereno, -6°C",
+    "snow_report": "Neve compatta, 110 cm",
+    "webcam_url": "https://www.skylinewebcams.com/it/webcam/italia/trentino-alto-adige/bolzano/corvara.html"
+  }
+]
