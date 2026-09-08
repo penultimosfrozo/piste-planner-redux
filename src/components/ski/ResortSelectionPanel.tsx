@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { useNavigate } from "@tanstack/react-router";
 import { ArrowLeft, BedDouble, CheckCircle2, Loader2, MapPin, Plus, Store } from "lucide-react";
+import { PlacesSkeleton } from "@/components/ski/Skeletons";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { PlaceRow } from "./PlaceRow";
@@ -234,10 +235,10 @@ export function ResortSelectionPanel({
       </p>
 
       {loading && (
-        <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-          <Loader2 className="h-4 w-4 animate-spin" />
-          Cerco hotel e noleggi nelle vicinanze…
-        </p>
+        <div className="mt-4 space-y-6">
+          <PlacesSkeleton title="Dove Dormire" />
+          <PlacesSkeleton title="Dove Noleggiare" />
+        </div>
       )}
 
       {!loading && (

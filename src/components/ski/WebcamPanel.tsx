@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { Loader2, Video } from "lucide-react";
+import { Video } from "lucide-react";
+import { WebcamSkeleton } from "@/components/ski/Skeletons";
 import { resortWebcams } from "@/lib/ski/resort-details.functions";
 
 /**
@@ -31,11 +32,7 @@ export function WebcamPanel({
         {title}
       </h3>
 
-      {isPending && (
-        <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-          <Loader2 className="h-4 w-4 animate-spin" /> Carico le webcam…
-        </p>
-      )}
+      {isPending && <WebcamSkeleton />}
 
       {!isPending && data && data.webcams.length > 0 && (
         <ul className="mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2">

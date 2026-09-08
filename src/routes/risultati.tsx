@@ -3,6 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, CheckCircle2, Loader2, Snowflake } from "lucide-react";
+import { EfficiencySkeleton } from "@/components/ski/Skeletons";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import {

@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { CloudSnow, Droplets, Loader2, Snowflake, Thermometer, Wind } from "lucide-react";
+import { CloudSnow, Droplets, Snowflake, Thermometer, Wind } from "lucide-react";
+import { WeatherSkeleton } from "@/components/ski/Skeletons";
 import { SNOW_UNAVAILABLE, resortWeather } from "@/lib/ski/resort-details.functions";
 
 /** Widget meteo sulle coordinate reali del comprensorio. */
@@ -29,13 +30,7 @@ export function WeatherWidget({
     retry: 2,
   });
 
-  if (isPending) {
-    return (
-      <p className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Loader2 className="h-4 w-4 animate-spin" /> Carico il meteo…
-      </p>
-    );
-  }
+  if (isPending) return <WeatherSkeleton />;
 
   if (!data?.now) {
     return (
