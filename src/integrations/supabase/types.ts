@@ -128,6 +128,33 @@ export type Database = {
         }
         Relationships: []
       }
+      profiles: {
+        Row: {
+          created_at: string
+          id: string
+          onboarding_completed: boolean
+          ski_level: string
+          updated_at: string
+          visited_resorts: string[]
+        }
+        Insert: {
+          created_at?: string
+          id: string
+          onboarding_completed?: boolean
+          ski_level?: string
+          updated_at?: string
+          visited_resorts?: string[]
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          onboarding_completed?: boolean
+          ski_level?: string
+          updated_at?: string
+          visited_resorts?: string[]
+        }
+        Relationships: []
+      }
       resort_cache: {
         Row: {
           cache_key: string
