@@ -18,7 +18,7 @@ function meta(slug: string) {
   ];
 }
 
-export const Route = createFileRoute("/localita/$slug")({
+export const Route = createFileRoute("/esplora/$slug")({
   head: ({ params }) => ({ meta: meta(params.slug) }),
   component: () => <LocalityScreen slug={Route.useParams().slug} />,
 });

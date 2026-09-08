@@ -9,27 +9,11 @@ import { Badge } from "@/components/ui/badge";
 import { NewsList, type NewsItem } from "@/components/ski/NewsList";
 import { CATALOG_REGIONS, RESORT_CATALOG, searchCatalog } from "@/lib/ski/catalog";
 import { fetchSkiNews } from "@/lib/ski/news.functions";
-import resortsData from "@/data/resorts.json";
 import staticNews from "@/data/news.json";
 import { resortSeason } from "@/lib/ski/season";
+import { ResortMap } from "@/components/ski/ResortMap";
 
-/** Dati editoriali extra disponibili solo per i comprensori curati. */
-type CuratedExtra = {
-  id: string;
-  open_slopes_count?: number;
-  total_slopes_count?: number;
-  opening_hours?: string;
-  weather_status?: string;
-  snow_report?: string;
-  webcam_url?: string;
-};
-
-const extras = new Map<string, CuratedExtra>(
-  (resortsData as unknown as CuratedExtra[]).map((r) => [r.id, r]),
-);
 const fallbackNews = staticNews as NewsItem[];
-
-const SNOW_FILTERS = ["Tutte", "Neve fresca", "Neve compatta", "Polvere"] as const;
 
 const INITIAL_DESTINATIONS = 5;
 const DESTINATIONS_STEP = 10;
@@ -48,7 +32,6 @@ export function ExploreScreen() {
   const [query, setQuery] = useState("");
   const [region, setRegion] = useState("Tutte");
   const [minKm, setMinKm] = useState(0);
-  const [snow, setSnow] = useState<string>("Tutte");
   const [visible, setVisible] = useState(INITIAL_DESTINATIONS);
   const destinationsRef = useRef<HTMLHeadingElement>(null);
 
@@ -62,13 +45,9 @@ export function ExploreScreen() {
       RESORT_CATALOG.filter((r) => {
         if (region !== "Tutte" && r.region !== region) return false;
         if (r.total_ski_km < minKm) return false;
-        if (snow !== "Tutte") {
-          const report = extras.get(r.id)?.snow_report ?? "";
-          if (!report.toLowerCase().includes(snow.toLowerCase())) return false;
-        }
         return true;
       }),
-    [region, minKm, snow],
+    [region, minKm],
   );
 
   const shown = filtered.slice(0, visible);
@@ -114,7 +93,7 @@ export function ExploreScreen() {
                       type="button"
                       onClick={() => {
                         setQuery("");
-                        void navigate({ to: "/localita/$slug", params: { slug: r.id } });
+                        void navigate({ to: "/esplora/$slug", params: { slug: r.id } });
                       }}
                       className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm transition-colors hover:bg-accent"
                     >
@@ -187,31 +166,23 @@ export function ExploreScreen() {
               </option>
             ))}
           </select>
-          <select
-            value={snow}
-            onChange={(e) => {
-              setSnow(e.target.value);
-              resetPagination();
-            }}
-            aria-label="Filtra per condizioni neve"
-            className="rounded-xl border border-input bg-background px-3 py-2 text-sm text-foreground"
-          >
-            {SNOW_FILTERS.map((s) => (
-              <option key={s} value={s}>
-                {s === "Tutte" ? "Tutte le condizioni" : s}
-              </option>
-            ))}
-          </select>
         </div>
 
-        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-5">
+          <ResortMap resorts={filtered} />
+          <p className="mt-2 text-xs text-muted-foreground">
+            Clicca un marker per vedere nome, stato stagionale e aprire la scheda; doppio click
+            apre subito il dettaglio.
+          </p>
+        </div>
+
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {shown.map((r) => {
-            const extra = extras.get(r.id);
             const season = resortSeason(r);
             return (
               <Link
                 key={r.id}
-                to="/localita/$slug"
+                to="/esplora/$slug"
                 params={{ slug: r.id }}
                 className="rounded-2xl border border-border bg-card p-4 text-left transition-colors hover:bg-accent"
               >
@@ -256,7 +227,7 @@ export function ExploreScreen() {
                       }
                     >
                       {season.open
-                        ? (extra?.snow_report ?? `${r.snowmaking_coverage}% innevamento`)
+                        ? `${r.snowmaking_coverage}% innevamento programmato`
                         : "Dato non disponibile (pausa stagionale)"}
                     </dd>
                   </div>

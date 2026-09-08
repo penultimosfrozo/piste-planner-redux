@@ -17,6 +17,8 @@ import { Route as ItinerarioRouteImport } from './routes/itinerario'
 import { Route as ProfiloRouteImport } from './routes/profilo'
 import { Route as RisultatiRouteImport } from './routes/risultati'
 import { Route as ApiItinerariesRouteImport } from './routes/api/itineraries'
+import { Route as EsploraIndexRouteImport } from './routes/esplora.index'
+import { Route as EsploraSlugRouteImport } from './routes/esplora.$slug'
 import { Route as LocalitaSlugRouteImport } from './routes/localita.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +61,16 @@ const ApiItinerariesRoute = ApiItinerariesRouteImport.update({
   path: '/api/itineraries',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsploraIndexRoute = EsploraIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EsploraRoute,
+} as any)
+const EsploraSlugRoute = EsploraSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => EsploraRoute,
+} as any)
 const LocalitaSlugRoute = LocalitaSlugRouteImport.update({
   id: '/localita/$slug',
   path: '/localita/$slug',
@@ -69,35 +81,40 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/crea-itinerario': typeof CreaItinerarioRoute
-  '/esplora': typeof EsploraRoute
+  '/esplora': typeof EsploraRouteWithChildren
   '/itinerario': typeof ItinerarioRoute
   '/profilo': typeof ProfiloRoute
   '/risultati': typeof RisultatiRoute
   '/api/itineraries': typeof ApiItinerariesRoute
+  '/esplora/$slug': typeof EsploraSlugRoute
   '/localita/$slug': typeof LocalitaSlugRoute
+  '/esplora/': typeof EsploraIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/crea-itinerario': typeof CreaItinerarioRoute
-  '/esplora': typeof EsploraRoute
   '/itinerario': typeof ItinerarioRoute
   '/profilo': typeof ProfiloRoute
   '/risultati': typeof RisultatiRoute
   '/api/itineraries': typeof ApiItinerariesRoute
+  '/esplora/$slug': typeof EsploraSlugRoute
   '/localita/$slug': typeof LocalitaSlugRoute
+  '/esplora': typeof EsploraIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/crea-itinerario': typeof CreaItinerarioRoute
-  '/esplora': typeof EsploraRoute
+  '/esplora': typeof EsploraRouteWithChildren
   '/itinerario': typeof ItinerarioRoute
   '/profilo': typeof ProfiloRoute
   '/risultati': typeof RisultatiRoute
   '/api/itineraries': typeof ApiItinerariesRoute
+  '/esplora/$slug': typeof EsploraSlugRoute
   '/localita/$slug': typeof LocalitaSlugRoute
+  '/esplora/': typeof EsploraIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -110,18 +127,21 @@ export interface FileRouteTypes {
     | '/profilo'
     | '/risultati'
     | '/api/itineraries'
+    | '/esplora/$slug'
     | '/localita/$slug'
+    | '/esplora/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/auth'
     | '/crea-itinerario'
-    | '/esplora'
     | '/itinerario'
     | '/profilo'
     | '/risultati'
     | '/api/itineraries'
+    | '/esplora/$slug'
     | '/localita/$slug'
+    | '/esplora'
   id:
     | '__root__'
     | '/'
@@ -132,14 +152,16 @@ export interface FileRouteTypes {
     | '/profilo'
     | '/risultati'
     | '/api/itineraries'
+    | '/esplora/$slug'
     | '/localita/$slug'
+    | '/esplora/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthRoute: typeof AuthRoute
   CreaItinerarioRoute: typeof CreaItinerarioRoute
-  EsploraRoute: typeof EsploraRoute
+  EsploraRoute: typeof EsploraRouteWithChildren
   ItinerarioRoute: typeof ItinerarioRoute
   ProfiloRoute: typeof ProfiloRoute
   RisultatiRoute: typeof RisultatiRoute
@@ -205,6 +227,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiItinerariesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/esplora/': {
+      id: '/esplora/'
+      path: '/'
+      fullPath: '/esplora/'
+      preLoaderRoute: typeof EsploraIndexRouteImport
+      parentRoute: typeof EsploraRoute
+    }
+    '/esplora/$slug': {
+      id: '/esplora/$slug'
+      path: '/$slug'
+      fullPath: '/esplora/$slug'
+      preLoaderRoute: typeof EsploraSlugRouteImport
+      parentRoute: typeof EsploraRoute
+    }
     '/localita/$slug': {
       id: '/localita/$slug'
       path: '/localita/$slug'
@@ -215,11 +251,24 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface EsploraRouteChildren {
+  EsploraSlugRoute: typeof EsploraSlugRoute
+  EsploraIndexRoute: typeof EsploraIndexRoute
+}
+
+const EsploraRouteChildren: EsploraRouteChildren = {
+  EsploraSlugRoute: EsploraSlugRoute,
+  EsploraIndexRoute: EsploraIndexRoute,
+}
+
+const EsploraRouteWithChildren =
+  EsploraRoute._addFileChildren(EsploraRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthRoute: AuthRoute,
   CreaItinerarioRoute: CreaItinerarioRoute,
-  EsploraRoute: EsploraRoute,
+  EsploraRoute: EsploraRouteWithChildren,
   ItinerarioRoute: ItinerarioRoute,
   ProfiloRoute: ProfiloRoute,
   RisultatiRoute: RisultatiRoute,

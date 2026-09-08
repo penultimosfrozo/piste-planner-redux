@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CloudSun, Droplets, Info, Snowflake, Thermometer, Wind } from "lucide-react";
+import { CloudSun, Droplets, Info, Thermometer, Wind } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
   Tooltip,
@@ -114,10 +114,6 @@ export function WeatherTagDialog({
                       <span className="flex items-center gap-1">
                         <Droplets className="h-3.5 w-3.5" />
                         {d.precipitationMm} mm
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Snowflake className="h-3.5 w-3.5" />
-                        {d.snowfallCm} cm di neve
                       </span>
                     </div>
                   </li>
