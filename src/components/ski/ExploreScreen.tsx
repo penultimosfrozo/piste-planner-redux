@@ -9,10 +9,31 @@ import { Badge } from "@/components/ui/badge";
 import { NewsList, type NewsItem } from "@/components/ski/NewsList";
 import { CATALOG_REGIONS, RESORT_CATALOG, searchCatalog } from "@/lib/ski/catalog";
 import { fetchSkiNews } from "@/lib/ski/news.functions";
-import resortsData from "@/data/resorts.json";
 import staticNews from "@/data/news.json";
 import { resortSeason } from "@/lib/ski/season";
 import { ResortMap } from "@/components/ski/ResortMap";
+
+const fallbackNews = staticNews as NewsItem[];
+
+const INITIAL_DESTINATIONS = 5;
+const DESTINATIONS_STEP = 10;
+
+export function ExploreScreen() {
+  const loadNews = useServerFn(fetchSkiNews);
+  const { data: newsData } = useQuery({
+    queryKey: ["ski-news"],
+    queryFn: () => loadNews(),
+    staleTime: 1000 * 60 * 10,
+  });
+  // Feed RSS in tempo reale, con le notizie editoriali come fallback.
+  const news: NewsItem[] = newsData?.news?.length ? newsData.news : fallbackNews;
+
+  const navigate = useNavigate();
+  const [query, setQuery] = useState("");
+  const [region, setRegion] = useState("Tutte");
+  const [minKm, setMinKm] = useState(0);
+  const [visible, setVisible] = useState(INITIAL_DESTINATIONS);
+  const destinationsRef = useRef<HTMLHeadingElement>(null);
 
   const regions = useMemo(() => ["Tutte", ...CATALOG_REGIONS], []);
 
