@@ -33,17 +33,17 @@ import type { FuelType, HotelCategory, SkierLevel } from "@/lib/ski/types";
 export const Route = createFileRoute("/itinerario")({
   head: () => ({
     meta: [
-      { title: "Crea itinerario — SkiScore" },
+      { title: "Crea itinerario — PeakFinder" },
       {
         name: "description",
         content:
           "Confronta le stazioni sciistiche italiane per tempo reale sugli sci, code, viaggio e costo totale: skipass, carburante, pedaggi, noleggio e parcheggio.",
       },
-      { property: "og:title", content: "Crea itinerario — SkiScore" },
+      { property: "og:title", content: "Crea itinerario — PeakFinder" },
       {
         property: "og:description",
         content:
-          "Dimmi da dove parti, quanti giorni e che auto hai: SkiScore ordina le località per ore effettive in pista al netto di code, viaggio e costi.",
+          "Dimmi da dove parti, quanti giorni e che auto hai: PeakFinder ordina le località per ore effettive in pista al netto di code, viaggio e costi.",
       },
     ],
   }),
@@ -212,7 +212,7 @@ export function ItineraryForm({ targetResort }: { targetResort?: string }) {
         <div className="mx-auto max-w-5xl px-5 py-14">
           <div className="flex items-center gap-2 text-sm font-medium tracking-wide text-primary">
             <Snowflake className="h-4 w-4" />
-            SkiScore
+            PeakFinder
           </div>
           <h1 className="mt-4 font-display text-4xl leading-tight font-semibold text-foreground sm:text-5xl">
             Quante ore scierai davvero?

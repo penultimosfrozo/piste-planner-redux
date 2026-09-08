@@ -19,16 +19,16 @@ export const Route = createFileRoute("/auth")({
   validateSearch: searchSchema,
   head: () => ({
     meta: [
-      { title: "Accedi — SkiScore" },
+      { title: "Accedi — PeakFinder" },
       {
         name: "description",
         content:
-          "Accedi a SkiScore per salvare i tuoi itinerari sulla neve, con hotel e noleggio scelti.",
+          "Accedi a PeakFinder per salvare i tuoi itinerari sulla neve, con hotel e noleggio scelti.",
       },
-      { property: "og:title", content: "Accedi — SkiScore" },
+      { property: "og:title", content: "Accedi — PeakFinder" },
       {
         property: "og:description",
-        content: "Entra in SkiScore e ritrova i tuoi itinerari sulla neve su ogni dispositivo.",
+        content: "Entra in PeakFinder e ritrova i tuoi itinerari sulla neve su ogni dispositivo.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -120,7 +120,7 @@ function AuthPage() {
       <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
         <div className="flex items-center gap-2 text-primary">
           <Snowflake className="h-5 w-5" />
-          <span className="text-sm font-semibold tracking-wide">SkiScore</span>
+          <span className="text-sm font-semibold tracking-wide">PeakFinder</span>
         </div>
         <h1 className="mt-3 font-display text-2xl font-semibold text-card-foreground">
           {mode === "signin" ? "Accedi" : "Crea il tuo account"}

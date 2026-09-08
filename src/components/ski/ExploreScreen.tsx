@@ -12,6 +12,7 @@ import { fetchSkiNews } from "@/lib/ski/news.functions";
 import staticNews from "@/data/news.json";
 import { resortSeason } from "@/lib/ski/season";
 import { ResortMap } from "@/components/ski/ResortMap";
+import { NewsListSkeleton } from "@/components/ski/Skeletons";
 
 const fallbackNews = staticNews as NewsItem[];
 
@@ -20,7 +21,7 @@ const DESTINATIONS_STEP = 10;
 
 export function ExploreScreen() {
   const loadNews = useServerFn(fetchSkiNews);
-  const { data: newsData } = useQuery({
+  const { data: newsData, isPending: newsPending } = useQuery({
     queryKey: ["ski-news"],
     queryFn: () => loadNews(),
     staleTime: 1000 * 60 * 10,
@@ -119,7 +120,7 @@ export function ExploreScreen() {
           Ultime notizie della montagna
         </h1>
         <div className="mt-4">
-          <NewsList news={news} />
+          {newsPending ? <NewsListSkeleton count={3} /> : <NewsList news={news} />}
         </div>
       </section>
 

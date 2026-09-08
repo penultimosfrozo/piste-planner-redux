@@ -3,6 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, CheckCircle2, Loader2, Snowflake } from "lucide-react";
+import { EfficiencySkeleton } from "@/components/ski/Skeletons";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
@@ -58,13 +59,13 @@ export const Route = createFileRoute("/risultati")({
   },
   head: () => ({
     meta: [
-      { title: "Classifica destinazioni — SkiScore" },
+      { title: "Classifica destinazioni — PeakFinder" },
       {
         name: "description",
         content:
           "La classifica delle stazioni sciistiche più efficienti per il tuo viaggio: ore in pista, code, parcheggio consigliato, noleggi e costo totale.",
       },
-      { property: "og:title", content: "Classifica destinazioni — SkiScore" },
+      { property: "og:title", content: "Classifica destinazioni — PeakFinder" },
       {
         property: "og:description",
         content:
@@ -247,8 +248,11 @@ function ResultsPage() {
             : "Confronto completato: scegli la destinazione più efficiente, poi personalizza hotel e noleggio."}
         </div>
 
+        {googlePending && <EfficiencySkeleton count={3} />}
+
         {/* Confronto: hotel e noleggi compaiono solo dentro la scheda selezionata */}
-        {shown.map((result, index) => {
+        {!googlePending &&
+          shown.map((result, index) => {
           const isSelected = result.resort.id === selectedId;
           return (
             <div key={result.resort.id}>

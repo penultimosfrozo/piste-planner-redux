@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { Loader2 } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 import type { Resort } from "@/lib/ski/types";
 import { resortSeason } from "@/lib/ski/season";
 
@@ -162,9 +162,9 @@ export function ResortMap({ resorts }: { resorts: Resort[] }) {
     <div className="relative overflow-hidden rounded-2xl border border-border">
       <div ref={containerRef} className="h-[420px] w-full" aria-label="Mappa dei comprensori" />
       {!ready && (
-        <p className="absolute inset-0 flex items-center justify-center gap-2 bg-background/70 text-sm text-muted-foreground">
-          <Loader2 className="h-4 w-4 animate-spin" /> Carico la mappa…
-        </p>
+        <div className="absolute inset-0 bg-background/80 p-4" aria-hidden>
+          <Skeleton className="h-full w-full rounded-xl" />
+        </div>
       )}
     </div>
   );

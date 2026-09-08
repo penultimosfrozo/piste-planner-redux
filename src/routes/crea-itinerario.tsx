@@ -11,13 +11,13 @@ export const Route = createFileRoute("/crea-itinerario")({
   validateSearch: (raw: Record<string, unknown>) => searchSchema.parse(raw),
   head: () => ({
     meta: [
-      { title: "Crea il tuo itinerario sulla neve — SkiScore" },
+      { title: "Crea il tuo itinerario sulla neve — PeakFinder" },
       {
         name: "description",
         content:
-          "Inserisci partenza, date e auto: SkiScore calcola ore effettive sugli sci, costi e confronta i comprensori, mettendo al primo posto quello che hai scelto.",
+          "Inserisci partenza, date e auto: PeakFinder calcola ore effettive sugli sci, costi e confronta i comprensori, mettendo al primo posto quello che hai scelto.",
       },
-      { property: "og:title", content: "Crea il tuo itinerario sulla neve — SkiScore" },
+      { property: "og:title", content: "Crea il tuo itinerario sulla neve — PeakFinder" },
       {
         property: "og:description",
         content:

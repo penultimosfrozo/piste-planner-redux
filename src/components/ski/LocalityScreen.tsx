@@ -9,6 +9,7 @@ import { NewsList, type NewsItem } from "@/components/ski/NewsList";
 import { WeatherWidget } from "@/components/ski/WeatherWidget";
 import { FavoriteButton } from "@/components/ski/FavoriteButton";
 import { WebcamPanel } from "@/components/ski/WebcamPanel";
+import { NewsListSkeleton } from "@/components/ski/Skeletons";
 import {
   RESORT_CATALOG,
   liftStatusForResort,
@@ -24,7 +25,7 @@ export function LocalityScreen({ slug }: { slug: string }) {
   const [showAllLifts, setShowAllLifts] = useState(false);
 
   const loadNews = useServerFn(fetchSkiNews);
-  const { data: newsData } = useQuery({
+  const { data: newsData, isPending: newsPending } = useQuery({
     queryKey: ["ski-news"],
     queryFn: () => loadNews(),
     staleTime: 1000 * 60 * 10,
@@ -148,10 +149,10 @@ export function LocalityScreen({ slug }: { slug: string }) {
             })}
           </ul>
         )}
-        {lifts.length > 10 && !showAllLifts && (
+        {lifts.length > 10 && (
           <div className="mt-4 flex justify-center">
-            <Button variant="secondary" onClick={() => setShowAllLifts(true)}>
-              Mostra resto ({lifts.length - 10})
+            <Button variant="secondary" onClick={() => setShowAllLifts((v) => !v)}>
+              {showAllLifts ? "Mostra meno" : `Mostra resto (${lifts.length - 10})`}
             </Button>
           </div>
         )}
@@ -177,7 +178,11 @@ export function LocalityScreen({ slug }: { slug: string }) {
         <h2 className="font-display text-xl font-semibold text-foreground">
           Notizie su {resort.name}
         </h2>
-        {news.length === 0 ? (
+        {newsPending ? (
+          <div className="mt-4">
+            <NewsListSkeleton count={3} />
+          </div>
+        ) : news.length === 0 ? (
           <p className="mt-3 text-sm text-muted-foreground">
             Nessuna notizia recente dedicata a questa località.
           </p>

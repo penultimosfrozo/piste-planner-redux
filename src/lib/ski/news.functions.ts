@@ -23,7 +23,7 @@ async function fetchText(url: string, timeoutMs = 6000): Promise<string | null> 
     const timer = setTimeout(() => controller.abort(), timeoutMs);
     const res = await fetch(url, {
       signal: controller.signal,
-      headers: { "User-Agent": "Mozilla/5.0 (compatible; SkiScoreBot/1.0)" },
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; PeakFinderBot/1.0)" },
     });
     clearTimeout(timer);
     if (!res.ok) return null;

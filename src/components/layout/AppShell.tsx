@@ -4,10 +4,19 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { useFavoriteUpdates } from "@/hooks/useFavorites";
+import { useSkiProfile } from "@/hooks/useSkiProfile";
+import { OnboardingFlow } from "@/components/ski/OnboardingFlow";
+
+/** Onboarding non aggirabile finché il profilo non è completo. */
+function OnboardingGate() {
+  const { needsOnboarding } = useSkiProfile();
+  if (!needsOnboarding) return null;
+  return <OnboardingFlow />;
+}
 
 const NAV = [
   { to: "/", label: "Esplora", icon: Compass, exact: true },
-  { to: "/itinerario", label: "Crea itinerario", icon: MapPlus, exact: false, highlight: true },
+  { to: "/itinerario", label: "Crea itinerario", icon: MapPlus, exact: false },
   { to: "/profilo", label: "Profilo", icon: User, exact: false },
 ] as const;
 
@@ -59,10 +68,10 @@ export function AppShell({ children }: { children: ReactNode }) {
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-60 flex-col border-r border-border bg-card px-4 py-6 lg:flex">
         <Link to="/" className="flex items-center gap-2 px-2 text-primary">
           <Snowflake className="h-5 w-5" />
-          <span className="font-display text-lg font-semibold text-foreground">SkiScore</span>
+          <span className="font-display text-lg font-semibold text-foreground">PeakFinder</span>
         </Link>
         <nav className="mt-8 flex flex-col gap-1">
-          {NAV.map(({ to, label, icon: Icon, exact, ...rest }) => (
+          {NAV.map(({ to, label, icon: Icon, exact }) => (
             <Link
               key={to}
               to={to}
@@ -73,11 +82,6 @@ export function AppShell({ children }: { children: ReactNode }) {
             >
               <Icon className="h-5 w-5 shrink-0" />
               <span className="truncate">{label}</span>
-              {"highlight" in rest && rest.highlight ? (
-                <span className="ml-auto rounded-full bg-primary px-2 py-0.5 text-[10px] font-semibold text-primary-foreground">
-                  new
-                </span>
-              ) : null}
             </Link>
           ))}
         </nav>
@@ -90,13 +94,13 @@ export function AppShell({ children }: { children: ReactNode }) {
       <div className="lg:pl-60">
         <AccountBar />
         <div className="pb-24 lg:pb-0">{children}</div>
+        <OnboardingGate />
       </div>
 
       {/* Bottom bar mobile */}
       <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card/95 backdrop-blur lg:hidden">
         <ul className="mx-auto grid max-w-md grid-cols-3 items-end px-4 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))]">
-          {NAV.map(({ to, label, icon: Icon, exact, ...rest }) => {
-            const highlight = "highlight" in rest && rest.highlight;
+          {NAV.map(({ to, label, icon: Icon, exact }) => {
             return (
               <li key={to} className="flex justify-center">
                 <Link
@@ -106,13 +110,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   inactiveProps={{ className: "text-muted-foreground" }}
                   className="flex w-full flex-col items-center gap-1 rounded-xl py-1 text-[11px] font-medium"
                 >
-                  {highlight ? (
-                    <span className="-mt-6 grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30">
-                      <Icon className="h-6 w-6" />
-                    </span>
-                  ) : (
-                    <Icon className="h-5 w-5" />
-                  )}
+                  <Icon className="h-5 w-5" />
                   <span className="truncate">{label}</span>
                 </Link>
               </li>

@@ -4,13 +4,13 @@ import { ExploreScreen } from "@/components/ski/ExploreScreen";
 export const Route = createFileRoute("/esplora/")({
   head: () => ({
     meta: [
-      { title: "Esplora comprensori, meteo e webcam — SkiScore" },
+      { title: "Esplora comprensori, meteo e webcam — PeakFinder" },
       {
         name: "description",
         content:
           "Notizie della montagna in tempo reale, stato impianti e piste, meteo dalle coordinate reali del comprensorio e webcam Windy incorporate.",
       },
-      { property: "og:title", content: "Esplora comprensori, meteo e webcam — SkiScore" },
+      { property: "og:title", content: "Esplora comprensori, meteo e webcam — PeakFinder" },
       {
         property: "og:description",
         content:
