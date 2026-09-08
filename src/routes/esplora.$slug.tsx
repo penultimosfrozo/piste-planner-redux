@@ -9,7 +9,7 @@ function meta(slug: string) {
     ? `${name}: impianti aperti, piste, meteo reale in quota, webcam live e notizie del comprensorio.`
     : "Dettaglio della località sciistica: impianti, piste, meteo e webcam.";
   return [
-    { title: `${name} — impianti, meteo e webcam | SkiScore` },
+    { title: `${name} — impianti, meteo e webcam | PeakFinder` },
     { name: "description", content: description },
     { property: "og:title", content: `${name} — impianti, meteo e webcam` },
     { property: "og:description", content: description },

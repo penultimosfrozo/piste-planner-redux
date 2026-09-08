@@ -18,13 +18,13 @@ import type { SkierLevel } from "@/lib/ski/types";
 export const Route = createFileRoute("/profilo")({
   head: () => ({
     meta: [
-      { title: "Il tuo profilo sciatore — SkiScore" },
+      { title: "Il tuo profilo sciatore — PeakFinder" },
       {
         name: "description",
         content:
-          "Livello sciatore, comprensori visitati, chilometri sciati e itinerari salvati: la tua dashboard SkiScore.",
+          "Livello sciatore, comprensori visitati, chilometri sciati e itinerari salvati: la tua dashboard PeakFinder.",
       },
-      { property: "og:title", content: "Il tuo profilo sciatore — SkiScore" },
+      { property: "og:title", content: "Il tuo profilo sciatore — PeakFinder" },
       {
         property: "og:description",
         content: "Gestisci livello, badge dei comprensori visitati e itinerari salvati.",

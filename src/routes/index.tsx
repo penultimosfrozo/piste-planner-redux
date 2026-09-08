@@ -4,13 +4,13 @@ import { ExploreScreen } from "@/components/ski/ExploreScreen";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Esplora la neve — SkiScore" },
+      { title: "Esplora la neve — PeakFinder" },
       {
         name: "description",
         content:
           "Cerca fra tutti i comprensori sciistici italiani, controlla impianti, meteo, bollettino neve e webcam live, e leggi le ultime notizie della montagna.",
       },
-      { property: "og:title", content: "Esplora la neve — SkiScore" },
+      { property: "og:title", content: "Esplora la neve — PeakFinder" },
       {
         property: "og:description",
         content:

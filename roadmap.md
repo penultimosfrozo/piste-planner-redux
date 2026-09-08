@@ -10,4 +10,4 @@
 
 ## Note
 - Progetto originale: https://github.com/temstorm789-lang/piste-planner-plus.git
-- App SkiScore: confronto stazioni sciistiche (tempo pista, code, viaggio, costo)
+- App PeakFinder: confronto stazioni sciistiche (tempo pista, code, viaggio, costo)

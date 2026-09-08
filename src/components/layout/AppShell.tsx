@@ -59,7 +59,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-60 flex-col border-r border-border bg-card px-4 py-6 lg:flex">
         <Link to="/" className="flex items-center gap-2 px-2 text-primary">
           <Snowflake className="h-5 w-5" />
-          <span className="font-display text-lg font-semibold text-foreground">SkiScore</span>
+          <span className="font-display text-lg font-semibold text-foreground">PeakFinder</span>
         </Link>
         <nav className="mt-8 flex flex-col gap-1">
           {NAV.map(({ to, label, icon: Icon, exact, ...rest }) => (

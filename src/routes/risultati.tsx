@@ -58,13 +58,13 @@ export const Route = createFileRoute("/risultati")({
   },
   head: () => ({
     meta: [
-      { title: "Classifica destinazioni — SkiScore" },
+      { title: "Classifica destinazioni — PeakFinder" },
       {
         name: "description",
         content:
           "La classifica delle stazioni sciistiche più efficienti per il tuo viaggio: ore in pista, code, parcheggio consigliato, noleggi e costo totale.",
       },
-      { property: "og:title", content: "Classifica destinazioni — SkiScore" },
+      { property: "og:title", content: "Classifica destinazioni — PeakFinder" },
       {
         property: "og:description",
         content:
