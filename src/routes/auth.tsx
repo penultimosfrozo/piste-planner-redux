@@ -9,7 +9,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 
 const searchSchema = z.object({
+  /** Destinazione post-login: accettiamo i tre nomi usati nell'app. */
   next: z.string().optional(),
+  redirectTo: z.string().optional(),
+  returnUrl: z.string().optional(),
 });
 
 export const Route = createFileRoute("/auth")({
@@ -34,14 +37,35 @@ export const Route = createFileRoute("/auth")({
   component: AuthPage,
 });
 
-function safePath(value: string | undefined): string {
-  if (!value || !value.startsWith("/") || value.startsWith("//")) return "/profilo";
-  return value;
+/**
+ * Normalizza la destinazione post-login: decodifica in sicurezza (anche se
+ * codificata più volte), conserva query annidate e frammento, e accetta solo
+ * percorsi interni all'app.
+ */
+export function safePath(value: string | undefined): string {
+  if (!value) return "/profilo";
+  let candidate = value;
+  for (let i = 0; i < 3; i++) {
+    if (!/%[0-9a-f]{2}/i.test(candidate)) break;
+    try {
+      const decoded = decodeURIComponent(candidate);
+      if (decoded === candidate) break;
+      candidate = decoded;
+    } catch {
+      break;
+    }
+  }
+  candidate = candidate.trim();
+  // Solo percorsi interni: niente URL assoluti, protocol-relative o schemi.
+  if (!candidate.startsWith("/") || candidate.startsWith("//")) return "/profilo";
+  if (/^\/\\/.test(candidate)) return "/profilo";
+  if (candidate.startsWith("/auth")) return "/profilo";
+  return candidate;
 }
 
 function AuthPage() {
   const navigate = useNavigate();
-  const { next } = useSearch({ from: "/auth" });
+  const { next, redirectTo, returnUrl } = useSearch({ from: "/auth" });
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -49,7 +73,7 @@ function AuthPage() {
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
 
-  const destination = safePath(next);
+  const destination = safePath(next ?? redirectTo ?? returnUrl);
 
   const submit = async () => {
     setBusy(true);
@@ -65,11 +89,11 @@ function AuthPage() {
         if (err) throw err;
         setInfo("Account creato. Se richiesto, conferma l'email e poi accedi.");
         const { data } = await supabase.auth.getSession();
-        if (data.session) navigate({ to: destination });
+        if (data.session) navigate({ href: destination });
       } else {
         const { error: err } = await supabase.auth.signInWithPassword({ email, password });
         if (err) throw err;
-        navigate({ to: destination });
+        navigate({ href: destination });
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Accesso non riuscito");
@@ -88,7 +112,7 @@ function AuthPage() {
       return;
     }
     if (result.redirected) return;
-    navigate({ to: destination });
+    navigate({ href: destination });
   };
 
   return (
