@@ -165,7 +165,7 @@ export function LocalityScreen({ slug }: { slug: string }) {
       <section className="mx-auto max-w-5xl px-5 pb-8">
         <h2 className="font-display text-xl font-semibold text-foreground">Meteo in quota</h2>
         <div className="mt-3">
-          <WeatherWidget lat={resort.lat} lng={resort.lng} />
+          <WeatherWidget lat={resort.lat} lng={resort.lng} seasonClosed={!season.open} />
         </div>
       </section>
 
