@@ -1,10 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { CloudSnow, Droplets, Loader2, Snowflake, Thermometer, Wind } from "lucide-react";
-import { resortWeather } from "@/lib/ski/resort-details.functions";
+import { SNOW_UNAVAILABLE, resortWeather } from "@/lib/ski/resort-details.functions";
 
 /** Widget meteo sulle coordinate reali del comprensorio. */
-export function WeatherWidget({ lat, lng }: { lat: number; lng: number }) {
+export function WeatherWidget({
+  lat,
+  lng,
+  seasonClosed = false,
+}: {
+  lat: number;
+  lng: number;
+  /** Comprensorio in pausa stagionale: i dati neve non sono rappresentativi. */
+  seasonClosed?: boolean;
+}) {
+  /** Neve: solo misure reali; nullo, zero o pausa stagionale ⇒ messaggio unico. */
+  const snowText = (cm: number | null | undefined) =>
+    seasonClosed || cm === null || cm === undefined || cm === 0
+      ? SNOW_UNAVAILABLE
+      : `${cm.toFixed(1)} cm`;
   const fetchWeather = useServerFn(resortWeather);
 
   const { data, isPending } = useQuery({
@@ -57,10 +71,16 @@ export function WeatherWidget({ lat, lng }: { lat: number; lng: number }) {
         <Metric icon={<Wind className="h-4 w-4" />} label="Vento">
           {fmt(now.windKph, "km/h")}
         </Metric>
-        <Metric icon={<Snowflake className="h-4 w-4" />} label="Quota neve">
-          {fmt(now.freezingLevelM, "m")}
+        <Metric icon={<Snowflake className="h-4 w-4" />} label="Neve">
+          <span className={now.snowfallCm ? "" : "text-sm font-medium text-muted-foreground"}>
+            {snowText(now.snowfallCm)}
+          </span>
         </Metric>
       </dl>
+
+      <p className="mt-2 text-xs text-muted-foreground">
+        Fonte dati: Google Weather (Google Maps Platform), coordinate del comprensorio.
+      </p>
 
       {data.forecast.length > 0 && (
         <ul className="mt-4 grid gap-2 sm:grid-cols-3">
@@ -80,7 +100,7 @@ export function WeatherWidget({ lat, lng }: { lat: number; lng: number }) {
               </p>
               <p className="mt-1 flex items-center gap-1 text-muted-foreground">
                 <CloudSnow className="h-3.5 w-3.5" />
-                {day.snowfallCm === null ? "n.d." : `${day.snowfallCm.toFixed(1)} cm di neve`}
+                {snowText(day.snowfallCm)}
               </p>
             </li>
           ))}
