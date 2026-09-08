@@ -1,0 +1,56 @@
+[
+  {
+    "id": "dolomiti-superski-apertura",
+    "title": "Dolomiti Superski: 12 aree collegate e oltre 1.200 km di piste",
+    "date": "2026-01-12",
+    "source": "Dolomiti Superski",
+    "abstract": "Il carosello dolomitico aggiorna lo stato degli impianti: quasi tutte le aree operative con innevamento programmato al 97% delle piste.",
+    "url": "https://www.dolomitisuperski.com/it/news",
+    "image": "https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1200&h=630&fit=crop"
+  },
+  {
+    "id": "valle-aosta-neve",
+    "title": "Valle d'Aosta, nevicate abbondanti sulle alte quote",
+    "date": "2026-01-10",
+    "source": "Regione Valle d'Aosta",
+    "abstract": "Cervinia e Courmayeur registrano fondi oltre il metro e mezzo: bollettino valanghe e stato piste aggiornati quotidianamente.",
+    "url": "https://www.regione.vda.it/turismo/",
+    "image": "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=1200&h=630&fit=crop"
+  },
+  {
+    "id": "neveitalia-previsioni",
+    "title": "Previsioni neve: perturbazione atlantica sulle Alpi occidentali",
+    "date": "2026-01-09",
+    "source": "Neveitalia",
+    "abstract": "Attesi 30-50 cm sopra i 1.800 metri tra Piemonte e Valle d'Aosta, con calo termico e vento forte in quota.",
+    "url": "https://www.neveitalia.it/meteo",
+    "image": "https://images.unsplash.com/photo-1483664852095-d6cc6870702d?w=1200&h=630&fit=crop"
+  },
+  {
+    "id": "campiglio-eventi",
+    "title": "Madonna di Campiglio, la stagione degli eventi sulla neve",
+    "date": "2026-01-07",
+    "source": "Campiglio.it",
+    "abstract": "Dalle sciate all'alba alle gare amatoriali sul Canalone Miramonti: il calendario invernale delle Dolomiti di Brenta.",
+    "url": "https://www.campigliodolomiti.it/",
+    "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=1200&h=630&fit=crop"
+  },
+  {
+    "id": "roccaraso-appennino",
+    "title": "Appennino centrale: Roccaraso apre l'intero comprensorio",
+    "date": "2026-01-05",
+    "source": "Skipass Alto Sangro",
+    "abstract": "Oltre 100 km di piste battute nell'Alto Sangro, con navette gratuite dai parcheggi a valle nei weekend.",
+    "url": "https://www.skipassaltosangro.it/",
+    "image": "https://images.unsplash.com/photo-1548777123-e216912df7d8?w=1200&h=630&fit=crop"
+  },
+  {
+    "id": "sicurezza-piste",
+    "title": "Sicurezza in pista: casco e assicurazione obbligatori",
+    "date": "2026-01-03",
+    "source": "Ministero del Turismo",
+    "abstract": "Ricordiamo le regole in vigore per gli sport invernali in Italia: responsabilità civile obbligatoria e casco fino a 18 anni.",
+    "url": "https://www.ministeroturismo.gov.it/",
+    "image": "https://images.unsplash.com/photo-1522056615691-da7b8106c665?w=1200&h=630&fit=crop"
+  }
+]
